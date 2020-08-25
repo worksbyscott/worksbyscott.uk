@@ -14,7 +14,7 @@ const Home = () => {
     <>
       <motion.div
         key="slider"
-        initial={{ y: 600, opacity: 0 }}
+        initial={{ y: 700, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={transition}>
         <Slider />
