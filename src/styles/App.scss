@@ -1,0 +1,109 @@
+@import "./varibles.scss";
+@import "./breakpoints.scss";
+@import "./components/header.scss";
+@import "./components/slider.scss";
+
+body,
+html {
+  visibility: visible; // Toggle debug animations
+  user-select: none;
+  background: white;
+  overscroll-behavior: none;
+  margin: 0;
+  font-family: "Futura", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 1280px;
+  min-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  @include media("<=1560px") {
+    width: 1280px;
+    min-width: 1280px;
+  }
+  @include media("<=desktop") {
+    width: 1080px;
+    min-width: 1080px;
+  }
+  @include media("<=1080px") {
+    width: 100%;
+    min-width: 100%;
+  }
+  .row {
+    display: flex;
+    height: 100%;
+    padding: 0 32px;
+    @include media("<=phone") {
+      padding: 0 16px;
+    }
+  }
+  .v-center {
+    align-items: center;
+  }
+  .space-between {
+    justify-content: space-between;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100%;
+  .row {
+    display: flex;
+    height: 100%;
+  }
+}
+
+
+// intro overlay
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .intro-overlay {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  h3 {
+    z-index: 11;
+    font-size: 3rem;
+    line-height: 4.2rem;
+    font-weight: 500;
+    font-family: "gilroy-bold";
+    overflow: hidden;
+    color: white;
+    font-weight: 700;
+    span {
+      position: relative;
+      height: 56px;
+      @include media("<=tablet") {
+        height: 48px;
+      }
+      @include media("<=phone") {
+        height: 32px;
+      }
+    }
+  }
+}
+
+.App {
+  z-index: 2;
+  transform: translateY(0);
+  position: relative;
+  min-height: 100vh;
+}
+// intro overlay
