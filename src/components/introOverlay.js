@@ -71,7 +71,7 @@ const IntroOverlay = () => {
           duration: 1,
           ease: [0.6, 0.05, -0.01, 0.9],
         }}
-      >t</motion.div>
+      />
       <motion.h3
         key="introtext"
         variants={stringVariant}

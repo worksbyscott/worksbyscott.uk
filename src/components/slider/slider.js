@@ -1,21 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import SliderControls from "./sliderControls"
 import SliderImage from "./sliderImage.js"
-import gsap from 'gsap';
+import { motion } from 'framer-motion';
+
+import { Transitions } from '../../utility/transitions'
 import { Slides } from '../../data/slides'
 import { changeSlide } from '../../animations/sliderAnimations'
 
 // Slide change animation
-
+const sliderVariants = {
+    initial: {
+        y: 700,
+        opacity: 0
+    },
+    enter: {
+        y: 0,
+        opacity: 1
+    },
+    exit: {
+        opacity: 0
+    }
+}
 
 const Slider = () => {
 
+    //Current slide index start at 0
     const [currentIndex, setCurrentIndex] = useState(1);
+
+    //Is the slide animating boolean - intial false
     const [isAnimating, setIsAnimating] = useState(false);
+
+    //Current slide data
     const currentSlide = Slides[currentIndex];
-
-
-
 
     //Slide tranistion animation and index change
     const updateSlide = (direction) => {
@@ -35,16 +51,15 @@ const Slider = () => {
         changeSlide(updateIndex, finishAnimation);
     }
 
-
-    // Slides through the case studies with interval SLIDE_UPDATE_INTERVAL
-
-
-
-
-
-
     return (
-        <div className="slider">
+        <motion.div
+            key="slider"
+            initial={"initial"}
+            animate={"enter"}
+            exit={"exit"}
+            variants={sliderVariants}
+            transition={Transitions.ease1}
+            className="slider">
             <div className="container">
                 <div className="row">
                     <div className="slider-controls">
@@ -71,7 +86,7 @@ const Slider = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
 
     )
 }

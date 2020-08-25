@@ -15,7 +15,6 @@ const App = () => {
   const [introduction, setIntroduction] = useState(false);
 
   useEffect(() => {
-
     //Removing the loading screen and setting Introduction
     setTimeout(() => {
       setIntroduction(true)

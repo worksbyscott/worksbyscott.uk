@@ -21,7 +21,7 @@ const Layout = () => {
     return (
         <>
             <Header />
-            {routes.map(({ path, Component, index }) => (
+            {routes.map(({ path, Component, name, index }) => (
                 <Route key={path} exact path={path}>
                     <Component index={index} />
                 </Route>

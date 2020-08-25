@@ -7,20 +7,23 @@ const CaseWrapper = (index) => {
 
     const slide = Slides[index]
 
-    const name = slide['name'],
-        information = slide['information'],
-        tools = slide['tools'],
-        client = slide['client'],
-        type = slide['type'],
-        image = slide['image'],
-        link = slide['link'];
+    const name = slide.name,
+        information = slide.information,
+        tools = slide.tools,
+        client = slide.client,
+        type = slide.type,
+        image = slide.image,
+        link = slide.link;
 
-    var actionString = "View Website";
+    let actionString = "View Website";
 
     const caseAction = () => {
         if (link) {
-            if (link.includes("github")) actionString = "View Github"
-            else if (link.includes("behance")) actionString = "View Behance"
+            if (link.includes("github")) {
+                actionString = "View Github"
+            } else if (link.includes("behance")) {
+                actionString = "View Behance"
+            }
             return <a href={link}>{actionString} <ArrowIcon /></a>
         }
         return <a href="/" className='inactive'>Coming soon <ArrowIcon /></a>
