@@ -5,9 +5,10 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <React.StrictMode>
+    < App />
+  </React.StrictMode>
+  ,
   document.getElementById("root")
 );
 

@@ -39,7 +39,7 @@ const CaseWrapper = (index) => {
                             <h3 className="title">{name}</h3>
                         </div>
                         <div className="case-action">
-                            {caseAction()}
+                            {caseAction}
                         </div>
                     </div>
                 </div>
