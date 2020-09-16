@@ -1,15 +1,12 @@
 import React from "react";
 import { motion } from 'framer-motion'
+import CaseWrapper from '../../components/case/caseWrapper'
 
 const EchoPage = () => {
   return (
     <motion.div exit={{ opacity: 0 }}
       className='page' >
-      <div className='container'>
-        <div className='row'>
-          <h3>This is the case studies page</h3>
-        </div>
-      </div>
+      <CaseWrapper index={0} />
     </motion.div >
   );
 };

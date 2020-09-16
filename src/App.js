@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch, useLocation, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion';
 
 //SCSS imports
@@ -26,14 +26,14 @@ const routes = [
 ];
 
 const App = () => {
-  //State of introduction completion - true = completed
   const [introduction, setIntroduction] = useState(false);
 
+  const INTRODUCTION_TIMEOUT = 5000;
+
   useEffect(() => {
-    //Removing the loading screen and setting Introduction
     setTimeout(() => {
       setIntroduction(true)
-    }, 5000);
+    }, INTRODUCTION_TIMEOUT);
   }, []);
 
   return (
@@ -42,25 +42,23 @@ const App = () => {
         {!introduction ? (
           <IntroOverlay />
         ) : (
-            <Router>
-              <div className="main">
-                <Header />
-                <Route
-                  render={({ location }) => (
-                    <AnimatePresence exitBeforeEnter>
-                      <Switch location={location} key={location.pathname}>
-                        {routes.map(({ path, Component }) => (
-                          <Route
-                            exact
-                            path={path}
-                            key={path}
-                            render={() => <Component />} />
-                        ))}
-                      </Switch>
-                    </AnimatePresence>
-                  )} />
-              </div>
-            </Router>
+            <div className="main">
+              <Header />
+              <Route
+                render={({ location }) => (
+                  <AnimatePresence exitBeforeEnter>
+                    <Switch location={location} key={location.pathname}>
+                      {routes.map(({ path, Component }) => (
+                        <Route
+                          exact
+                          path={path}
+                          key={path}
+                          render={() => <Component />} />
+                      ))}
+                    </Switch>
+                  </AnimatePresence>
+                )} />
+            </div>
           )}
       </AnimatePresence>
     </div>

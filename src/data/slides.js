@@ -31,3 +31,10 @@ export const Slides =
             "route": "/echo"
         }
     ]
+
+export const getSlideByName = (name) => {
+    return Slides.filter(slide => {
+        return slide.name.includes(name);
+    })[0];
+}
+

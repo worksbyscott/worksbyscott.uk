@@ -1,14 +1,13 @@
 import React from "react";
+import CaseWrapper from '../../components/case/caseWrapper'
+import { motion } from 'framer-motion'
 
 const CipherPage = () => {
   return (
-    <div className='page'>
-      <div className='container'>
-        <div className='row'>
-          <h3>This is the case studies page</h3>
-        </div>
-      </div>
-    </div>
+    <motion.div exit={{ opacity: 0 }}
+      className='page' >
+      <CaseWrapper index={0} />
+    </motion.div >
   );
 };
 
