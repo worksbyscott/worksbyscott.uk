@@ -28,7 +28,6 @@ const exitVar = {
   }
 }
 
-//Staggerign effect addding to all the children of h3
 const stringVariant = {
   before: {
     y: 0
@@ -46,7 +45,6 @@ const IntroOverlay = () => {
 
   const windowSize = useResize();
 
-  //Loading screen animated text string
   const string = "worksbyscott.uk"
 
   const replaceSpace = (letter) => {
@@ -55,8 +53,7 @@ const IntroOverlay = () => {
     return letter;
   }
 
-  //Splitting the string into an array to loop and create span dynamically
-  const hero = Array.from(string).map((letter) => replaceSpace(letter));
+  const heroString = Array.from(string).map((letter) => replaceSpace(letter));
 
   return (
     <div className="intro">
@@ -77,7 +74,7 @@ const IntroOverlay = () => {
         variants={stringVariant}
         initial={"before"}
         animate={"after"}>
-        {hero.map((letter, index) => (
+        {heroString.map((letter, index) => (
           <motion.span
             key={index}
             initial={"before"}

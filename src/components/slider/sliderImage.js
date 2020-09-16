@@ -7,12 +7,9 @@ const SliderImage = ({ index, slides, old }) => {
     const route = slide['route'];
 
     return (
-        <>
-            <Link to={route}>
-
-                <img className={(old && "slider-old")} src={require('../../assets/' + slide['image'] + '.png')} alt="cella" />
-            </Link>
-        </>
+        <Link to={route}>
+            <img className={(old && "slider-old")} src={require('../../assets/' + slide['image'] + '.png')} alt="cella" />
+        </Link>
     )
 }
 

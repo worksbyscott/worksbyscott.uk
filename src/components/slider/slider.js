@@ -24,16 +24,10 @@ const sliderVariants = {
 
 const Slider = () => {
 
-    //Current slide index start at 0
     const [currentIndex, setCurrentIndex] = useState(1);
-
-    //Is the slide animating boolean - intial false
     const [isAnimating, setIsAnimating] = useState(false);
-
-    //Current slide data
     const currentSlide = Slides[currentIndex];
 
-    //Slide tranistion animation and index change
     const updateSlide = (direction) => {
         if (isAnimating) return;
         setIsAnimating(true);

@@ -8,7 +8,8 @@ export const Slides =
             "type": "Design, Development",
             "link": "github.com",
             "image": "cella",
-            "route": "/cellafm"
+            "route": "/cellafm",
+            "content": ["cella", "cella"]
         },
         {
             "name": "Turbo Ciphers",
@@ -18,7 +19,8 @@ export const Slides =
             "type": "Design, Development",
             "link": "github.com",
             "image": "cipher",
-            "route": "/cipher"
+            "route": "/cipher",
+            "content": ["cipher", "cella"]
         },
         {
             "name": "Echo",
@@ -28,7 +30,8 @@ export const Slides =
             "type": "Design, Development",
             "link": "github.com",
             "image": "echo",
-            "route": "/echo"
+            "route": "/echo",
+            "content": ["cella", "cipher"]
         }
     ]
 
